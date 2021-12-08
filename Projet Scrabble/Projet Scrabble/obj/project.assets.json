@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Théo\\source\\repos\\Projet Scrabble\\Projet Scrabble\\Projet Scrabble.csproj",
+      "projectUniqueName": "C:\\Users\\Théo\\Source\\Repos\\theor2003\\Algo_POO_Scrabble\\Projet Scrabble\\Projet Scrabble\\Projet Scrabble.csproj",
       "projectName": "Projet Scrabble",
-      "projectPath": "C:\\Users\\Théo\\source\\repos\\Projet Scrabble\\Projet Scrabble\\Projet Scrabble.csproj",
+      "projectPath": "C:\\Users\\Théo\\Source\\Repos\\theor2003\\Algo_POO_Scrabble\\Projet Scrabble\\Projet Scrabble\\Projet Scrabble.csproj",
       "packagesPath": "C:\\Users\\Théo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Théo\\source\\repos\\Projet Scrabble\\Projet Scrabble\\obj\\",
+      "outputPath": "C:\\Users\\Théo\\Source\\Repos\\theor2003\\Algo_POO_Scrabble\\Projet Scrabble\\Projet Scrabble\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Théo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

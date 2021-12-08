@@ -17,6 +17,8 @@ namespace Projet_Scrabble
                 Console.WriteLine(element);
             }
             Théo2.Add_Mot("Mael");
+
+            //CA MARCHE BORDEL A QUEUE
         }
     }
 }
