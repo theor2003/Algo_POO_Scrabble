@@ -19,6 +19,7 @@ namespace Projet_Scrabble
             Théo2.Add_Mot("Mael");
 
             //CA MARCHE BORDEL A QUEUE
+            //Deuxième test
         }
     }
 }
