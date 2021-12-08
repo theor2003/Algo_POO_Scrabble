@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Projet Scrabble",
+    "\\Projet Scrabble\\Projet Scrabble"
   ],
-  "SelectedNode": "\\Projet Scrabble.sln",
+  "SelectedNode": "\\Projet Scrabble\\Projet Scrabble\\Joueur.cs",
   "PreviewInSolutionExplorer": false
 }
