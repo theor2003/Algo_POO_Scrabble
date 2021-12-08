@@ -22,6 +22,7 @@ namespace Projet_Scrabble
             //Deuxième test
             //Le dernier test Inshalla
             //Maelle lpb
+            //une baguette pas trop cuite svp
         }
     }
 }
