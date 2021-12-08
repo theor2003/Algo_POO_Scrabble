@@ -21,6 +21,7 @@ namespace Projet_Scrabble
             //CA MARCHE BORDEL A QUEUE
             //Deuxième test
             //Le dernier test Inshalla
+            //Maelle lpb
         }
     }
 }
