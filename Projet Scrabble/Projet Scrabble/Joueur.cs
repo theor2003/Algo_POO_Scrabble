@@ -1,17 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 public class Joueur
 {
+    //attribut
 	private string nom;
 	private int score;
 	private string[] mots_trouves;
+    private List<Jeton> jeton;
 
-	public Joueur(string nom,int score=0,string[] mots_trouves=null)
+    //constructeur
+    public Joueur(string nom,int score=0,string[] mots_trouves=null, List<Jeton> jeton=null)
     {
 		this.nom = nom;
 		this.score = score;
 		this.mots_trouves = mots_trouves;
+        this.jeton = jeton;
     }
 	public Joueur(string path)
     {
@@ -36,7 +41,9 @@ public class Joueur
 			this.mots_trouves = null;
         }
 	}
-	public string Nom
+	
+    //propriété
+    public string Nom
     {
         get
         {
@@ -48,6 +55,10 @@ public class Joueur
         get
         {
 			return this.score;
+        }
+        set
+        {
+            this.score = value;
         }
     }
 	public string[] Mots_trouves
@@ -66,5 +77,48 @@ public class Joueur
         }
         new_list[this.mots_trouves.Length] = mot;
         this.mots_trouves = new_list;
+    }
+    public override string ToString() // qui retourne une chaîne de caractères qui décrit un joueur.
+    {
+        if (this.mots_trouves != null) // verification qu'il y a des mots qui ont été trouvé
+        {
+            string text = "Le joueur " + this.nom + " a un score de " + this.score + " points. Il a trouvé les mots suivants :\n";
+            for (int i = 0; i < jeton.Count; i++)
+            {
+                text += this.jeton[i].Lettre + ", ";
+            }
+            return text;
+        }
+        else // si y'a aucun mots de trouvés
+        {
+            return "Le joueur " + this.nom + " n'a pas de points, car il n'a trouvé aucun mot.\n";
+        }
+    }
+    public void Add_Score(int val) // qui ajoute une valeur au score
+    {
+        this.Score = this.Score + val;
+    }
+    public int Is_This_Letter_In_Hand(char lettre) 
+    {
+        int index = -1;
+        for(int i = 0; i < this.jeton.Count; i++)
+        {
+            if (this.jeton[i].Lettre == lettre)
+            {
+                index = i;
+            }
+        }
+        return index;
+    }
+    public void Add_Main_Courante(Jeton monjeton) // qui ajoute un jeton à la main courante
+    {
+        this.jeton.Add(monjeton);
+    }
+    public void Remove_Main_Courante(Jeton monjeton) // qui retire un jeton de la main courante 
+    {
+        if (this.Is_This_Letter_In_Hand(monjeton.Lettre) != -1)
+        {
+            this.jeton.Remove(monjeton);
+        }
     }
 }
