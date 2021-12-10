@@ -5,12 +5,23 @@ public class Jeton
         //attribut
         private char lettre;
         private int scorelettre;
+        private int quantite; 
 
         //constructeur
-        public Jeton(char lettre, int scorelettre)
+        public Jeton(char lettre, int scorelettre, int quantite)
         {
             this.lettre = lettre;
             this.scorelettre = scorelettre;
+            this.quantite = quantite;
+        }
+
+        public Jeton (string lines)
+        {   
+            string[]tab = lines.Split(";");
+            this.lettre = tab [0][0];
+            this.scorelettre = Convert.Toint32(tab[1]);
+            this.quantite = Convert.ToInt32(tab[2]);
+
         }
 
         //propriété
@@ -23,6 +34,6 @@ public class Jeton
         public override string ToString()  //qui retourne une chaîne de caractères qui décrit un jeton.
         {
 
-            return "Le jeton a pour lettre : " + this.lettre + " qui a pour score : " + this.scorelettre; // faire avec un tabo ou faire des if
+            return "Le jeton a pour lettre : " + this.lettre + " qui a pour score : " + this.scorelettre; 
         }
 }

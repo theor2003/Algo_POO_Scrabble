@@ -9,37 +9,36 @@ public class Sac_Jeton
 {
 
 	//attribut
-	private List<char> jeton;
-	private char jetonTiree;
+	private List<Jeton> jeton;
+	private Jeton jetonTiree;
 
 	//constructeur
 	public Sac_Jeton(List<char> jeton = null)
 	{
-		this.jeton = new List<char>();
-		Random r = new Random();
-		Retire_Jeton(r);
+		this.jeton = new List<Jeton>();
+		//Random r = new Random();
+		//Retire_Jeton(r);
+
+		string[] text = File.ReadAllText("Jetons.txt");
+		
+		for ( i = 0 ; i < jeton.Count; i++)
+        {
+			string[] tab = lines.Split(";");
+			Jeton jetonTiree = new Jeton (jetonTiree[i]);
+			jeton.Add(jetonTiree);
+		}
+
 
 	}
 
-
-	public static void Readfile()
-	{
-		string[] lines = File.ReadAllLines("Jetons.txt");
-		//string[] tab = lines.Split(",");
-
-		foreach (string line in lines)
-
-			Console.WriteLine(line);
-		Console.ReadKey();
-
-		// faire un tablo de string + split readallline, colonne 0 : la lettre, colonne 1 :Le score, colonne 2 : nb de jeton
-
-	}
 
 	public char Retire_Jeton(Random r) // cette méthode permet de tirer au hasard un jeton parmi les possibles
 	{
 		this.jetonTiree = this.jeton[r.Next(0, jeton.Count)];
 		return this.jetonTiree;
+
+		// int index = r.Next(jeton.Count);
+		//return jeton[index];
 
 	}
 
