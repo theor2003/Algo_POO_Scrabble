@@ -19,7 +19,7 @@ namespace Projet_Scrabble
             Théo2.Add_Mot("Mael");*/
             Théo.Add_Score(10);
             Console.WriteLine(Théo.Score);
-            //Test 112
+            //Test 113
         }
     }
 }
