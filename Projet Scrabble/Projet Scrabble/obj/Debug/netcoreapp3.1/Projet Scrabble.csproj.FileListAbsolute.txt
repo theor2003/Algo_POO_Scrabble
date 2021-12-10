@@ -26,3 +26,5 @@ C:\Users\Théo\Source\Repos\theor2003\Algo_POO_Scrabble\Projet Scrabble\Projet S
 C:\Users\Théo\Source\Repos\theor2003\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\bin\Debug\netcoreapp3.1\Projet Scrabble.dll
 C:\Users\Théo\Source\Repos\theor2003\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\bin\Debug\netcoreapp3.1\Projet Scrabble.pdb
 C:\Users\Théo\Source\Repos\theor2003\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\Projet Scrabble.genruntimeconfig.cache
+C:\Users\maell\OneDrive\Bureau\ALGO\TEST 5\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\Projet Scrabble.dll
+C:\Users\maell\OneDrive\Bureau\ALGO\TEST 5\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\Projet Scrabble.pdb

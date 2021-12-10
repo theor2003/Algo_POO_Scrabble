@@ -18,7 +18,7 @@ public class Jeton
         public Jeton (string lines)
         {   
             string[]tab = lines.Split(";");
-            this.lettre = tab [0][0];
+            this.lettre = tab [0];
             this.scorelettre = Convert.Toint32(tab[1]);
             this.quantite = Convert.ToInt32(tab[2]);
 
@@ -34,6 +34,6 @@ public class Jeton
         public override string ToString()  //qui retourne une chaîne de caractères qui décrit un jeton.
         {
 
-            return "Le jeton a pour lettre : " + this.lettre + " qui a pour score : " + this.scorelettre; 
+            return "Le jeton a pour lettre : " + this.lettre + " qui a pour score : " + this.scorelettre +  "et il y en a :" + this.quantite; 
         }
 }
