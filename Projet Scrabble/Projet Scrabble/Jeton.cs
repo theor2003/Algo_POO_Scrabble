@@ -22,6 +22,7 @@ public class Jeton
 
         public override string ToString()  //qui retourne une chaîne de caractères qui décrit un jeton.
         {
-            return "Le jeton a pour lettre : " + this.lettre + " qui a pour score : " + this.scorelettre; ;
+
+            return "Le jeton a pour lettre : " + this.lettre + " qui a pour score : " + this.scorelettre; // faire avec un tabo ou faire des if
         }
 }

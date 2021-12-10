@@ -68,6 +68,7 @@ public class Joueur
             return this.mots_trouves;
         }
     }
+
     public void Add_Mot(string mot) //ajoute le mot dans la liste des mots déjà trouvés par le joueur au cours de la partie
     {
         string[] new_list = new string[this.mots_trouves.Length + 1];
@@ -78,6 +79,7 @@ public class Joueur
         new_list[this.mots_trouves.Length] = mot;
         this.mots_trouves = new_list;
     }
+
     public override string ToString() // qui retourne une chaîne de caractères qui décrit un joueur.
     {
         if (this.mots_trouves != null) // verification qu'il y a des mots qui ont été trouvé
@@ -94,10 +96,12 @@ public class Joueur
             return "Le joueur " + this.nom + " n'a pas de points, car il n'a trouvé aucun mot.\n";
         }
     }
+
     public void Add_Score(int val) // qui ajoute une valeur au score
     {
         this.Score = this.Score + val;
     }
+
     public int Is_This_Letter_In_Hand(char lettre) 
     {
         int index = -1;
@@ -110,15 +114,17 @@ public class Joueur
         }
         return index;
     }
+
     public void Add_Main_Courante(Jeton monjeton) // qui ajoute un jeton à la main courante
     {
         this.jeton.Add(monjeton);
     }
+
     public void Remove_Main_Courante(Jeton monjeton) // qui retire un jeton de la main courante 
     {
         if (this.Is_This_Letter_In_Hand(monjeton.Lettre) != -1)
         {
-            this.jeton.Remove(monjeton);
+            this.jeton.Remove(monjeton); 
         }
     }
 }
