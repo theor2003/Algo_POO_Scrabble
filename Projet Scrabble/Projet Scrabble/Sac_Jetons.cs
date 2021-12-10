@@ -44,6 +44,7 @@ public class Sac_Jeton
 
 	public override string ToString() // qui retourne une chaîne de caractères qui décrit en synthèse le contenu du Sac_Jetons
 	{
+		//faire une boucle 
 		return "La lettre : " + this.jetonTiree + ", a un score de : " + /*this.scorejeton +*/ " et est dupliqué ";
 	}
 
