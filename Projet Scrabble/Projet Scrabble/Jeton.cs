@@ -18,8 +18,8 @@ public class Jeton
         public Jeton (string lines)
         {   
             string[]tab = lines.Split(";");
-            this.lettre = tab [0];
-            this.scorelettre = Convert.Toint32(tab[1]);
+            this.lettre = Convert.ToChar(tab[0]);
+            this.scorelettre = Convert.ToInt32(tab[1]);
             this.quantite = Convert.ToInt32(tab[2]);
 
         }

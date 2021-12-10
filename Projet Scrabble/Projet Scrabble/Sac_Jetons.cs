@@ -21,9 +21,9 @@ public class Sac_Jeton
 
 		string[] text = File.ReadAllText("Jetons.txt");
 		
-		for ( i = 0 ; i < jeton.Count; i++)
+		for ( int i = 0 ; i < jeton.Count; i++)
         {
-			string[] tab = lines.Split(";");
+			string[] tab = text.Split(";");
 			Jeton jetonTiree = new Jeton (jetonTiree[i]);
 			jeton.Add(jetonTiree);
 		}
