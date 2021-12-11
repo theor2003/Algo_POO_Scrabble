@@ -12,22 +12,22 @@ public class Dictionnaire
 	
 	private string langue;
 
-	public Dictionnaire(List<string>[] mots,string langue)
+	public Dictionnaire(List<string>[] mots,string langue) //constructeur direct
     {
 		this.mots = mots;
 		this.langue = langue;
 	}
 
-	public Dictionnaire(string path, string langue)
+	public Dictionnaire(string path, string langue) //constructeur avec le fichier .txt
     {
 		this.langue = langue;
-		string[] dico = File.ReadAllLines(path);
-		List<string>[] mots = new List<string>[dico.Length/2];
-		for(int i = 0;i< dico.Length / 2; i++)
+		string[] dico = File.ReadAllLines(path); //conversion du .txt en tableau de strings
+		List<string>[] mots = new List<string>[dico.Length/2]; //création du tableau de List de string
+		for(int i = 0;i< dico.Length / 2; i++) //on itère pour toutes les longueurs de mots différentes
 		{
-			mots[i] = new List<string>();
-			string[] mot_long = dico[2*i+1].Split(' ');
-			for(int j = 0; j < mot_long.Length; j++)
+			mots[i] = new List<string>(); //initialisation de la List au rang i
+			string[] mot_long = dico[2*i+1].Split(' '); //séparation de la string de mots en un tableau de mots individuels
+			for(int j = 0; j < mot_long.Length; j++) //itération sur le tableau de mot précedement créé
             {
 				mots[i].Add(mot_long[j]);
             }
