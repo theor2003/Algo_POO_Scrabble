@@ -1,73 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 public class Dictionnaire
 {
-	/*private string[,] mots;
+	private List<string>[] mots;
+	//On vient donner un tableau de List de mots
+	//l'index 0 correspondra à la List de mots de longueur 2
+	//l'index x correspondra à la List de mots de longueur x+2
+	//la taille maximum théorique de notre tableau est de 13 car le plateau fait 15x15
+	
 	private string langue;
 
-	public Dictionnaire(string[,] mots,string langue)
+	public Dictionnaire(List<string>[] mots,string langue)
     {
 		this.mots = mots;
 		this.langue = langue;
 	}
 
+	public Dictionnaire(string path, string langue)
+    {
+		this.langue = langue;
+		string[] dico = File.ReadAllLines(path);
+	}
+
 	public override string ToString()
     {
-		return "a";
-    }*/
-
-	private List<string[]> dico;
-	string nomFichier;
-
-	public Dictionnaire(string nomFichier)
-	{
-		this.dico = new List<string[]>();
-	}
-
-	public List<string[]> Dico
-	{
-		get { return dico; }
-	}
-
-	public string toString()
-	{
-		int nbmot = 0;
-
-		for (int i = 0; i < dico.Count; i++)
-		{
-			for (int j = 0; j < dico[i].Length; j++)
-			{
-				nbmot = nbmot + 1;
-			}
-		}
-		return "Il y a " + nbmot + " dans le dictionnaire francais."; // je sais c'est pas ca mais ca peux aider 
-		
-	}
-
-	public bool RechDichoRecursif(int debut, int fin, string mot)
-	{
-		int tailleMot = mot.Length;
-		int milieu = (debut + fin) / 2;
-		int resultat = String.Compare(mot, dico[tailleMot - 2][milieu]);
-
-		if (debut > fin)
+		string description = "Ce dictionnaire est en " + this.langue + " et contient :";
+		for(int i = 2; i < this.mots.Length+2; i++)
         {
-			return false;
+			description += "\n" + this.mots[i-2].Count + " mots de longueur " + i; //on vient itérer pour toutes les List de mots
         }
-		else if (resultat == 0)
-		{
-			return true;
-		}
-		else if(resultat > 0)
+		return description;
+    }
+
+	public bool RechDichoRecursif(string mot)
+    {
+		bool found = false; //on initialise a false notre variable
+		for(int i = 0; i < this.mots[mot.Length-2].Count; i++)
         {
-			return RechDichoRecursif(milieu + 1, fin, mot);
+			if(this.mots[mot.Length - 2][i]==mot)
+            {
+				found = true; //dans le cas ou le mot cherché est égal a un des mots du dictionnaire alors on considère qu'il est trouvé
+            }
         }
-		else if(resultat < 0)
-        {
-			return RechDichoRecursif(debut , milieu - 1,mot);
-        }
-		
-		
-	}
+		return found;
+    }
 }

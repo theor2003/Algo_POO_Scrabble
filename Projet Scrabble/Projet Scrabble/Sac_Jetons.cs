@@ -19,13 +19,13 @@ public class Sac_Jeton
 		//Random r = new Random();
 		//Retire_Jeton(r);
 
-		string[] text = File.ReadAllText("jetons.txt");
+		string text = File.ReadAllText("jetons.txt");
 		
 		for ( int i = 0 ; i < jeton.Count; i++)
         {
 			string[] tab = text.Split(";");
-			Jeton jetonTiree = new Jeton (jetonTiree[i]);
-			jeton.Add(jetonTiree);
+			//Jeton jetonTiree = new Jeton (jetonTiree[i]);
+			//jeton.Add(jetonTiree);
 		}
 
 
