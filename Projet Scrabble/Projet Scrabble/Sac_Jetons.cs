@@ -19,7 +19,7 @@ public class Sac_Jeton
 		//Random r = new Random();
 		//Retire_Jeton(r);
 
-		string[] text = File.ReadAllText("Jetons.txt");
+		string[] text = File.ReadAllText("jetons.txt");
 		
 		for ( int i = 0 ; i < jeton.Count; i++)
         {
@@ -35,7 +35,7 @@ public class Sac_Jeton
 	public char Retire_Jeton(Random r) // cette méthode permet de tirer au hasard un jeton parmi les possibles
 	{
 		this.jetonTiree = this.jeton[r.Next(0, jeton.Count)];
-		return this.jetonTiree;
+		return Convert.ToChar(this.jetonTiree);
 
 		// int index = r.Next(jeton.Count);
 		//return jeton[index];
