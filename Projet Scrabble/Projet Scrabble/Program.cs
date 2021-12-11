@@ -22,6 +22,7 @@ namespace Projet_Scrabble
             //Console.WriteLine(Théo.Score);
             //Test 114
 
+            /*
             List<string>[] dico = new List<string>[4];
             dico[0] = new List<string>();
             dico[1] = new List<string>();
@@ -37,6 +38,10 @@ namespace Projet_Scrabble
 
             Console.WriteLine(Larousse.RechDichoRecursif("Theo"));
             Console.WriteLine(Larousse.RechDichoRecursif("Pipou"));
+            */
+
+            Dictionnaire Robert = new Dictionnaire("Francais.txt", "Français");
+            Console.WriteLine(Robert.ToString());
         }
     }
 }

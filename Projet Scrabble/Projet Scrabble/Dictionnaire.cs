@@ -22,6 +22,17 @@ public class Dictionnaire
     {
 		this.langue = langue;
 		string[] dico = File.ReadAllLines(path);
+		List<string>[] mots = new List<string>[dico.Length/2];
+		for(int i = 0;i< dico.Length / 2; i++)
+		{
+			mots[i] = new List<string>();
+			string[] mot_long = dico[2*i+1].Split(' ');
+			for(int j = 0; j < mot_long.Length; j++)
+            {
+				mots[i].Add(mot_long[j]);
+            }
+		}
+		this.mots = mots;
 	}
 
 	public override string ToString()
