@@ -16,7 +16,7 @@ public class Joueur
 		this.mots_trouves = mots_trouves;
         this.jeton = jeton;
     }
-	public Joueur(string path) //constructeur avec fichier .txt
+	public Joueur(string path) //constructeur avec fichier .txt //A MODIFIER POUR ACCOMODER LA FORME DE Joueurs.txt
     {
 		string[] info = File.ReadAllLines(path);
 		this.nom = info[0];
@@ -112,7 +112,7 @@ public class Joueur
         return index;
     }
 
-    public void Add_Main_Courante(Jeton monjeton) //joute un jeton à la main courante
+    public void Add_Main_Courante(Jeton monjeton) //ajoute un jeton à la main courante
     {
         this.jeton.Add(monjeton);
     }

@@ -39,9 +39,20 @@ namespace Projet_Scrabble
             Console.WriteLine(Larousse.RechDichoRecursif("Theo"));
             Console.WriteLine(Larousse.RechDichoRecursif("Pipou"));
             */
-
+            /*
             Dictionnaire Robert = new Dictionnaire("Francais.txt", "Français");
             Console.WriteLine(Robert.ToString());
+            */
+
+            Random r = new Random();
+            Sac_Jeton game1 = new Sac_Jeton();
+            Console.WriteLine(game1.ToString());
+            for(int i = 0; i < 102; i++)
+            {
+                Jeton tiré = game1.Retire_Jeton(r);
+                Console.WriteLine(tiré.Lettre + " " + tiré.Quantite);
+            }
+            Console.WriteLine(game1.ToString());
         }
     }
 }
