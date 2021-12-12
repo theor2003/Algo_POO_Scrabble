@@ -44,6 +44,7 @@ namespace Projet_Scrabble
             Console.WriteLine(Robert.ToString());
             */
 
+            /*
             Random r = new Random();
             Sac_Jeton game1 = new Sac_Jeton();
             Console.WriteLine(game1.ToString());
@@ -53,6 +54,17 @@ namespace Projet_Scrabble
                 Console.WriteLine(tiré.Lettre + " " + tiré.Quantite);
             }
             Console.WriteLine(game1.ToString());
+            */
+
+            Plateau game1 = new Plateau();
+            for (int i = 0; i < 15; i++)
+            {
+                for (int j = 0; j < 15; j++)
+                {
+                    Console.Write(game1.Bonus[i, j]);
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
