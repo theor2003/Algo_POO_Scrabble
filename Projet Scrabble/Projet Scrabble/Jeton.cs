@@ -13,7 +13,7 @@ public class Jeton
         this.quantite = quantite;
     }
 
-    public Jeton (string lines)
+    public Jeton (string lines) //constructeur à partir d'un fichier .txt
     {   
         string[]tab = lines.Split(";");
         this.lettre = tab[0];
@@ -26,7 +26,6 @@ public class Jeton
     public string Lettre
     {
         get {return this.lettre; }
-        set { this.lettre = value; }
     }
     public int Score
     {
