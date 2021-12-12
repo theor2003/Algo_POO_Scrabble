@@ -58,6 +58,8 @@ namespace Projet_Scrabble
 
             Plateau game1 = new Plateau("InstancePLateau.txt");
             game1.toString();
+            Console.WriteLine("J'EN PEUX PLUS AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
+            
         }
     }
 }
