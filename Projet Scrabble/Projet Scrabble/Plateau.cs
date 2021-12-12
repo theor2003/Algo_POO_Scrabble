@@ -12,7 +12,7 @@ public class Plateau
 		string[] bonus_tab = File.ReadAllLines("Bonus.txt");
 		for (int i = 0; i < 15; i++)
         {
-			string[] bonus_line = bonus_tab[i].Split();
+			string[] bonus_line = bonus_tab[i].Split(";");
 			for(int j = 0; j < 15; j++)
             {
 				this.bonus[i, j] = bonus_line[j];
