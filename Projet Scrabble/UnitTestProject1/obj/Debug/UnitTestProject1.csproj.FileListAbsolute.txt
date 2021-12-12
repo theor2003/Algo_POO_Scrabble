@@ -1,0 +1,2 @@
+C:\Users\maell\OneDrive\Bureau\ALGO\PROJET\Projet Scrabble\Projet Scrabble\UnitTestProject1\obj\Debug\UnitTestProject1.csproj.AssemblyReference.cache
+C:\Users\maell\OneDrive\Bureau\ALGO\PROJET\Projet Scrabble\Projet Scrabble\UnitTestProject1\obj\Debug\UnitTestProject1.csproj.CoreCompileInputs.cache
