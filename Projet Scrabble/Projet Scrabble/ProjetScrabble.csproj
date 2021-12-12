@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Projet_Scrabble</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Projet Scrabble">
+      <HintPath>bin\Debug\netcoreapp3.1\Projet Scrabble.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

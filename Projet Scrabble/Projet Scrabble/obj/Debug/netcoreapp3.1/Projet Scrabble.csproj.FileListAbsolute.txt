@@ -28,3 +28,17 @@ C:\Users\Théo\Source\Repos\theor2003\Algo_POO_Scrabble\Projet Scrabble\Projet S
 C:\Users\Théo\Source\Repos\theor2003\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\Projet Scrabble.genruntimeconfig.cache
 C:\Users\maell\OneDrive\Bureau\ALGO\TEST 5\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\Projet Scrabble.dll
 C:\Users\maell\OneDrive\Bureau\ALGO\TEST 5\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\Projet Scrabble.pdb
+C:\Users\maell\OneDrive\Bureau\ALGO\PROJET\Projet Scrabble\Projet Scrabble\bin\Debug\netcoreapp3.1\Projet Scrabble.exe
+C:\Users\maell\OneDrive\Bureau\ALGO\PROJET\Projet Scrabble\Projet Scrabble\bin\Debug\netcoreapp3.1\Projet Scrabble.deps.json
+C:\Users\maell\OneDrive\Bureau\ALGO\PROJET\Projet Scrabble\Projet Scrabble\bin\Debug\netcoreapp3.1\Projet Scrabble.runtimeconfig.json
+C:\Users\maell\OneDrive\Bureau\ALGO\PROJET\Projet Scrabble\Projet Scrabble\bin\Debug\netcoreapp3.1\Projet Scrabble.runtimeconfig.dev.json
+C:\Users\maell\OneDrive\Bureau\ALGO\PROJET\Projet Scrabble\Projet Scrabble\bin\Debug\netcoreapp3.1\Projet Scrabble.dll
+C:\Users\maell\OneDrive\Bureau\ALGO\PROJET\Projet Scrabble\Projet Scrabble\bin\Debug\netcoreapp3.1\Projet Scrabble.pdb
+C:\Users\maell\OneDrive\Bureau\ALGO\PROJET\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\Projet Scrabble.csproj.AssemblyReference.cache
+C:\Users\maell\OneDrive\Bureau\ALGO\PROJET\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\Projet Scrabble.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maell\OneDrive\Bureau\ALGO\PROJET\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\Projet Scrabble.AssemblyInfoInputs.cache
+C:\Users\maell\OneDrive\Bureau\ALGO\PROJET\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\Projet Scrabble.AssemblyInfo.cs
+C:\Users\maell\OneDrive\Bureau\ALGO\PROJET\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\Projet Scrabble.csproj.CoreCompileInputs.cache
+C:\Users\maell\OneDrive\Bureau\ALGO\PROJET\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\Projet Scrabble.dll
+C:\Users\maell\OneDrive\Bureau\ALGO\PROJET\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\Projet Scrabble.pdb
+C:\Users\maell\OneDrive\Bureau\ALGO\PROJET\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\Projet Scrabble.genruntimeconfig.cache
