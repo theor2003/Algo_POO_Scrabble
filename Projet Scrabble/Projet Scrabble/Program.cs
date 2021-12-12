@@ -56,15 +56,8 @@ namespace Projet_Scrabble
             Console.WriteLine(game1.ToString());
             */
 
-            Plateau game1 = new Plateau();
-            for (int i = 0; i < 15; i++)
-            {
-                for (int j = 0; j < 15; j++)
-                {
-                    Console.Write(game1.Bonus[i, j]);
-                }
-                Console.WriteLine();
-            }
+            Plateau game1 = new Plateau("InstancePLateau.txt");
+            game1.toString();
         }
     }
 }
