@@ -8,12 +8,10 @@ using System.IO;
 public class Sac_Jeton
 {
 
-	//attribut
-	private List<Jeton> jeton;
+	private List<Jeton> jeton; //List de tous les jetons encore dans le sac
 	private Jeton jetonTiree;
 
-	//constructeur
-	public Sac_Jeton(List<char> jeton = null)
+	public Sac_Jeton(List<Jeton> jeton = null)
 	{
 		this.jeton = new List<Jeton>();
 		//Random r = new Random();

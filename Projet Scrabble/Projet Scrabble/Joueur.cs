@@ -4,21 +4,19 @@ using System.IO;
 
 public class Joueur
 {
-    //attribut
 	private string nom;
 	private int score;
-	private string[] mots_trouves;
+	private string[] mots_trouves; //tableau de mots que le joueur a trouvé
     private List<Jeton> jeton;
 
-    //constructeur
-    public Joueur(string nom,int score=0,string[] mots_trouves=null, List<Jeton> jeton=null)
+    public Joueur(string nom,int score=0,string[] mots_trouves=null, List<Jeton> jeton=null) //constructeur élément par élément
     {
 		this.nom = nom;
 		this.score = score;
 		this.mots_trouves = mots_trouves;
         this.jeton = jeton;
     }
-	public Joueur(string path)
+	public Joueur(string path) //constructeur avec fichier .txt
     {
 		string[] info = File.ReadAllLines(path);
 		this.nom = info[0];
@@ -42,7 +40,6 @@ public class Joueur
         }
 	}
 	
-    //propriété
     public string Nom
     {
         get
@@ -80,9 +77,9 @@ public class Joueur
         this.mots_trouves = new_list;
     }
 
-    public override string ToString() // qui retourne une chaîne de caractères qui décrit un joueur.
+    public override string ToString() //retourne une chaîne de caractères qui décrit un joueur.
     {
-        if (this.mots_trouves != null) // verification qu'il y a des mots qui ont été trouvé
+        if (this.mots_trouves != null) // si le joueur a trouvé au moins un mot
         {
             string text = "Le joueur " + this.nom + " a un score de " + this.score + " points. Il a trouvé les mots suivants :\n";
             for (int i = 0; i < jeton.Count; i++)
@@ -91,7 +88,7 @@ public class Joueur
             }
             return text;
         }
-        else // si y'a aucun mots de trouvés
+        else // si il n'y a aucun mots de trouvés
         {
             return "Le joueur " + this.nom + " n'a pas de points, car il n'a trouvé aucun mot.\n";
         }
@@ -102,7 +99,7 @@ public class Joueur
         this.Score = this.Score + val;
     }
 
-    public int Is_This_Letter_In_Hand(char lettre) 
+    public int Is_This_Letter_In_Hand(string lettre) //vérifie si le joueur a trouvé ce mot
     {
         int index = -1;
         for(int i = 0; i < this.jeton.Count; i++)
@@ -115,14 +112,14 @@ public class Joueur
         return index;
     }
 
-    public void Add_Main_Courante(Jeton monjeton) // qui ajoute un jeton à la main courante
+    public void Add_Main_Courante(Jeton monjeton) //joute un jeton à la main courante
     {
         this.jeton.Add(monjeton);
     }
 
-    public void Remove_Main_Courante(Jeton monjeton) // qui retire un jeton de la main courante 
+    public void Remove_Main_Courante(Jeton monjeton) //retire un jeton de la main courante 
     {
-        if (this.Is_This_Letter_In_Hand(monjeton.Lettre) != -1)
+        if (this.Is_This_Letter_In_Hand(monjeton.Lettre) != -1) //verifie que le jeton est bien dans la main courante
         {
             this.jeton.Remove(monjeton); 
         }
