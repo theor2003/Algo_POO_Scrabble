@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "BmLsGasmhnrvUqG1OUqgCSYw+3Q3NZ5xSDdKHOejoAiSLsTQKGg2BG1KZZgTB5izbksJ9CHdE7YJlJoUYo7a+A==",
+  "dgSpecHash": "rpT/jhh7wKyY1d/UHcFc0BEBegKo9srbt7Kg6P0mbJFMAr9fB58bbWRLucLzmITVr8M7l0jTOqVX3DNyKi3Fmg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Théo\\Source\\Repos\\theor2003\\Algo_POO_Scrabble\\Projet Scrabble\\Projet Scrabble\\Projet Scrabble.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\maell\\source\\repos\\Algo_POO_Scrabble\\Projet Scrabble\\Projet Scrabble\\Projet Scrabble\\Projet Scrabble\\Projet Scrabble.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\maell\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.20\\microsoft.netcore.app.host.win-x64.3.1.20.nupkg.sha512",
+    "C:\\Users\\maell\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\maell\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\maell\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
   "logs": []
 }
