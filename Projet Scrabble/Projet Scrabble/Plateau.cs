@@ -100,6 +100,8 @@ public class Plateau
 			Console.WriteLine();
 		}
 	}
+
+
 	public bool Intersection(string mot, int ligne, int colonne, char direction) // qui vérifie que le mot à placer a bien une intersection avec un des mots dejà placé
 	{
 		bool intersection = false;
@@ -125,6 +127,7 @@ public class Plateau
             }
         }
 		return intersection;
+
 
 
 		
