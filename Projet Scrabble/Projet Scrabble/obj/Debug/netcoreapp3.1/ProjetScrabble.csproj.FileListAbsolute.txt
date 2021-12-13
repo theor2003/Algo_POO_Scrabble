@@ -14,3 +14,19 @@ C:\Users\maell\OneDrive\Bureau\ALGO\PROJET\Projet Scrabble\Projet Scrabble\Proje
 C:\Users\maell\OneDrive\Bureau\ALGO\PROJET\Projet Scrabble\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\ProjetScrabble.dll
 C:\Users\maell\OneDrive\Bureau\ALGO\PROJET\Projet Scrabble\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\ProjetScrabble.pdb
 C:\Users\maell\OneDrive\Bureau\ALGO\PROJET\Projet Scrabble\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\ProjetScrabble.genruntimeconfig.cache
+C:\Users\maell\source\repos\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\bin\Debug\netcoreapp3.1\ProjetScrabble.exe
+C:\Users\maell\source\repos\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\bin\Debug\netcoreapp3.1\ProjetScrabble.deps.json
+C:\Users\maell\source\repos\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\bin\Debug\netcoreapp3.1\ProjetScrabble.runtimeconfig.json
+C:\Users\maell\source\repos\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\bin\Debug\netcoreapp3.1\ProjetScrabble.runtimeconfig.dev.json
+C:\Users\maell\source\repos\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\bin\Debug\netcoreapp3.1\ProjetScrabble.dll
+C:\Users\maell\source\repos\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\bin\Debug\netcoreapp3.1\ProjetScrabble.pdb
+C:\Users\maell\source\repos\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\bin\Debug\netcoreapp3.1\Projet Scrabble.pdb
+C:\Users\maell\source\repos\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\ProjetScrabble.csproj.AssemblyReference.cache
+C:\Users\maell\source\repos\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\ProjetScrabble.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maell\source\repos\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\ProjetScrabble.AssemblyInfoInputs.cache
+C:\Users\maell\source\repos\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\ProjetScrabble.AssemblyInfo.cs
+C:\Users\maell\source\repos\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\ProjetScrabble.csproj.CoreCompileInputs.cache
+C:\Users\maell\source\repos\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\ProjetScrabble.csproj.CopyComplete
+C:\Users\maell\source\repos\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\ProjetScrabble.dll
+C:\Users\maell\source\repos\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\ProjetScrabble.pdb
+C:\Users\maell\source\repos\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\ProjetScrabble.genruntimeconfig.cache
