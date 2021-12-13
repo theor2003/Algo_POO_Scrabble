@@ -191,7 +191,7 @@ public class Plateau
 		return motdicov;
 	}
 
-	public bool MotsDicoHorizontale()
+	public bool MotsDicoHorizontale() // qui vérifie que les mots verticale appartiennent au dictionnaire
 	{
 		bool motdicoh = false;
 
