@@ -98,11 +98,34 @@ public class Plateau
 			Console.WriteLine();
 		}
 	}
-	public bool Test_Plateau(string mot, int ligne, int colonne, char direction)
-    {
-		bool done = false;
-		// A COMPLETER JE CROIS
-		//WOLA JV CABLER
-		return done;
-    }
+	public bool Intersection(string mot, int ligne, int colonne, char direction) // qui teste si le mot passé en paramètre est un mot éligible aux positions ligne et colonne et dans la direction indiquée
+
+	{
+		bool intersection = false;
+		
+		if (direction == 'h')
+        {
+			for (int i = 0; i < mot.Length; i++)
+            {
+				if (lettres_tab[ligne,colonne] != "   ")
+                {
+					intersection = true;
+                }
+            }
+        }
+		else if (direction == 'v')
+        {
+			for (int j = 0; j < mot.Length; j++)
+            {
+				if (lettres_tab[ligne, colonne] != "   ")
+                {
+					intersection = true;
+                }
+            }
+        }
+		return intersection;
+
+
+		
+	}
 }
