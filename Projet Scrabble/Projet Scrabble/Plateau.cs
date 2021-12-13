@@ -221,5 +221,11 @@ public class Plateau
 			}
 		}
 		return motdicoh;
+
+		public bool LaMain(int mot) //Les lettres de la main utiles au mot appartiennent bien à la main
+		{
+			bool lamain = false;	
+
+        }
 	}
 }
