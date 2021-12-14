@@ -66,6 +66,10 @@ public class Joueur
             return this.mots_trouves;
         }
     }
+    public List<Jeton> Jeton
+    {
+        get { return this.jeton; }
+    }
 
     public void Add_Mot(string mot) //ajoute le mot dans la liste des mots déjà trouvés par le joueur au cours de la partie
     {
@@ -83,10 +87,15 @@ public class Joueur
         string text = null;
         if (this.mots_trouves != null) // si le joueur a trouvé au moins un mot
         {
-            text = "Le joueur " + this.nom + " a un score de " + this.score + " points. Il a trouvé les mots suivants :\n";
+            text = "Le joueur " + this.nom + " a un score de " + this.score + " points. Il possède les pions suivants :\n";
             for (int i = 0; i < jeton.Count; i++)
             {
                 text += this.jeton[i].Lettre + ", ";
+            }
+            text += "\nIl as trouvé les mots suivants :";
+            for (int j = 0; j < this.mots_trouves.Length; j++)
+            {
+                text += "\n" + this.mots_trouves[j];
             }
         }
         else // si il n'y a aucun mots de trouvés

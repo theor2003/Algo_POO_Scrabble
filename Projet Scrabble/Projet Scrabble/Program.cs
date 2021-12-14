@@ -63,9 +63,10 @@ namespace Projet_Scrabble
             }
             Console.WriteLine(game1.ToString());
             */
-
+            Random r = new Random();
             Plateau game1 = new Plateau("InstancePLateau.txt");
             game1.toString();
+            Sac_Jeton sac = new Sac_Jeton();
             Joueur Théo2 = new Joueur("Joueurs.txt");
             Dictionnaire Robert = new Dictionnaire("Francais.txt", "Français");
             Console.WriteLine(Théo2.ToString());
@@ -75,7 +76,7 @@ namespace Projet_Scrabble
             //Console.WriteLine(game1.Placement_Horizontal("AH", 15, 1));
             //Console.WriteLine(game1.Appartenance_Dico("AH",Robert));
             //Console.WriteLine(game1.Appartenance_Main_Et_Mots_Croise("AH",Théo2, 15, 1,'h'));
-            Console.WriteLine(game1.Test_Plateau("AH",15,1,'h',Robert,Théo2));
+            Console.WriteLine(game1.Test_Plateau("AH",15,1,'h',Robert,Théo2,sac,r));
             Console.WriteLine(Théo2.Score);
             Console.WriteLine(Théo2.ToString());
             game1.toString();

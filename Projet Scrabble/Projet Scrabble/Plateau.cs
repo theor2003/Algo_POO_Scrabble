@@ -99,7 +99,7 @@ public class Plateau
 			Console.WriteLine();
 		}
 	}
-	public bool Test_Plateau(string mot, int ligne, int colonne, char direction,Dictionnaire dico,Joueur joueur)
+	public bool Test_Plateau(string mot, int ligne, int colonne, char direction,Dictionnaire dico,Joueur joueur,Sac_Jeton sac,Random r)
     {
 		bool possible = true;
 		if(direction == 'h')
@@ -115,6 +115,10 @@ public class Plateau
 			joueur.Add_Score(Calcul_Score(mot, ligne, colonne, direction));
 			joueur.Add_Mot(mot);
 			this.Placer_Lettres(mot, joueur, ligne, colonne, direction);
+			for(int i = 0; i <= 7-joueur.Jeton.Count; i++)
+            {
+				joueur.Add_Main_Courante(sac.Retire_Jeton(r));
+            }
         }
 		return possible;
     }
