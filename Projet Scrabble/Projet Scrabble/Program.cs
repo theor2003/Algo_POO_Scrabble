@@ -10,15 +10,14 @@ namespace Projet_Scrabble
         {
             Random r = new Random();
             Joueur Théo = new Joueur("Théoooooo", 0, null);
+            Joueur Théo3 = new Joueur("Théa", 0, null);
             Joueur Théo2 = new Joueur("Joueurs.txt");
             List<Joueur> joueurs = new List<Joueur>();
             joueurs.Add(Théo);
             joueurs.Add(Théo2);
+            joueurs.Add(Théo3);
             Jeu game = new Jeu(joueurs);
-            while (true)
-            {
-                game.Tour(joueurs[1], r);
-            }
+            game.Partie(r);
         }
     }
 }

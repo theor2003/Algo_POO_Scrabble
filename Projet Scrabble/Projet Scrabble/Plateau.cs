@@ -100,6 +100,7 @@ public class Plateau
 			}
 			Console.WriteLine();
 		}
+		Console.WriteLine();
 	}
 	public bool Test_Plateau(string mot, int ligne, int colonne, char direction,Dictionnaire dico,Joueur joueur,Sac_Jeton sac,Random r)
     {
@@ -120,7 +121,7 @@ public class Plateau
 			joueur.Piocher_Necessaire(sac, r);
         }
 		return possible;
-    }
+	}
 	public bool Placement_Vertical(string mot, int ligne, int colonne)
     {
 		return ((mot.Length + ligne - 1) <= 15);

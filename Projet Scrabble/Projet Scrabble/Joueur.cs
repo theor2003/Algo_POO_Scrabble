@@ -13,7 +13,7 @@ public class Joueur
     {
 		this.nom = nom;
 		this.score = score;
-		this.mots_trouves = mots_trouves;
+		this.mots_trouves = new string[0];
         this.jeton = new List<Jeton>();
     }
 	public Joueur(string path) //constructeur avec fichier .txt //A MODIFIER POUR ACCOMODER LA FORME DE Joueurs.txt
@@ -87,7 +87,7 @@ public class Joueur
         string text = null;
         if (this.mots_trouves != null) // si le joueur a trouvé au moins un mot
         {
-            text = "Le joueur " + this.nom + " a un score de " + this.score + " points.";
+            text = this.nom + " a un score de " + this.score + " points.";
             text += "\nIl as trouvé les mots suivants :\n";
             for (int j = 0; j < this.mots_trouves.Length; j++)
             {
@@ -96,7 +96,7 @@ public class Joueur
         }
         else // si il n'y a aucun mots de trouvés
         {
-            text = "Le joueur " + this.nom + " n'a pas de points, car il n'a trouvé aucun mot.\n";
+            text = this.nom + " n'a pas de points, car il n'a trouvé aucun mot.\n";
         }
         text += "\nLe joueur possède les pions suivants :\n";
         for (int i = 0; i < this.jeton.Count; i++)
@@ -104,6 +104,7 @@ public class Joueur
             text +=this.jeton[i].Lettre + " ";
             //text += "\n" + this.jeton[i].Lettre + " en " + this.jeton[i].Quantite + " fois (cette lettre vaut " + this.jeton[i].Score + ")";
         }
+        text += "\n ";
         return text;
     }
 
