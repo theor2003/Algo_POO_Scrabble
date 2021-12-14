@@ -5,7 +5,6 @@ public class Plateau
 {
 	private string[,] lettres_tab;
 	private string[,] bonus;
-	//private Dictionnaire dictionnaire;	
 	
 	public Plateau()
 	{
@@ -100,8 +99,128 @@ public class Plateau
 			Console.WriteLine();
 		}
 	}
-	public bool Test_Plateauu(string mot, int ligne, int colonne, char direction)
+	public bool Test_Plateau(string mot, int ligne, int colonne, char direction,Dictionnaire dico,Joueur joueur)
     {
-		return false;
+		bool possible = true;
+		if(direction == 'h')
+        {
+			possible = this.Placement_Horizontal(mot, ligne, colonne) && this.Appartenance_Dico(mot, dico) && Appartenance_Main_Et_Mots_Croise(mot, joueur, ligne, colonne, direction);
+        }
+		else if (direction == 'v')
+        {
+			possible = this.Placement_Vertical(mot, ligne, colonne) && this.Appartenance_Dico(mot, dico) && Appartenance_Main_Et_Mots_Croise(mot, joueur, ligne, colonne, direction);
+		}
+        if (possible)
+        {
+			joueur.Add_Score(Calcul_Score(mot, ligne, colonne, direction));
+			joueur.Add_Mot(mot);
+        }
+		return possible;
+    }
+	public bool Placement_Vertical(string mot, int ligne, int colonne)
+    {
+		return ((mot.Length + ligne - 1) <= 15);
+    }
+	public bool Placement_Horizontal(string mot, int ligne, int colonne)
+    {
+		return ((mot.Length + colonne - 1) <= 15);
+	}
+	public bool Appartenance_Dico(string mot, Dictionnaire dico)
+    {
+		return dico.RechDichoRecursif(mot);
+    }
+	public bool Appartenance_Main_Et_Mots_Croise(string mot,Joueur joueur, int ligne, int colonne, char direction)
+    {
+		bool done = true;
+		string LettreEnCours = null;
+		for(int i = 0; i < mot.Length; i++)
+		{
+			LettreEnCours = Convert.ToString(mot[i]);
+			if (direction == 'h')
+            {
+				if (this.lettres_tab[ligne - 1, colonne - 1 + i] != "_" && this.lettres_tab[ligne - 1, colonne - 1 + i] != LettreEnCours)
+				{
+					done = false;
+				}
+				if (this.lettres_tab[ligne - 1, colonne - 1 + i] == "_" && (joueur.Is_This_Letter_In_Hand(LettreEnCours) == -1 || joueur.Is_This_Letter_In_Hand("*") == -1))
+				{
+					done = false;
+				}
+			}
+			else if (direction == 'v')
+			{
+				if (this.lettres_tab[ligne - 1 + i, colonne - 1] != "_" && this.lettres_tab[ligne - 1, colonne - 1 + i] != LettreEnCours)
+				{
+					done = false;
+				}
+				if (this.lettres_tab[ligne - 1 + i, colonne - 1] == "_" && (joueur.Is_This_Letter_In_Hand(LettreEnCours) == -1 || joueur.Is_This_Letter_In_Hand("*") == -1))
+				{
+					done = false;
+				}
+			}
+        }
+		return done;
+    }
+	public int Calcul_Score(string mot,int ligne,int colonne,char direction)
+    {
+		int score = 0;
+		int score_pion = 0;
+		int multiple_mot = 0;
+		string[] score_lettre = File.ReadAllLines("Jetons.txt");
+		for (int i = 0; i < mot.Length; i++)
+		{
+			for (int j = 0; j < 27; j++)
+			{
+				string[] ligne_lettre = score_lettre[j].Split(";");
+				if (Convert.ToString(mot[i]) == ligne_lettre[0])
+				{
+					score_pion = Convert.ToInt32(ligne_lettre[1]);
+				}
+			}
+			if (direction == 'h')
+			{
+                switch (this.bonus[ligne - 1, colonne - 1 + i])
+                {
+					case "M3":
+						multiple_mot += 3;
+						break;
+					case "M2":
+						multiple_mot += 2;
+						break;
+					case "L3":
+						score_pion = score_pion * 3;
+						break;
+					case "L2":
+						score_pion = score_pion * 2;
+						break;
+				}
+				this.bonus[ligne - 1, colonne - 1 + i] = "  ";
+			}
+			else if (direction == 'v')
+			{
+				switch (this.bonus[ligne - 1 + i, colonne - 1])
+				{
+					case "M3":
+						multiple_mot += 3;
+						break;
+					case "M2":
+						multiple_mot += 2;
+						break;
+					case "L3":
+						score_pion = score_pion * 3;
+						break;
+					case "L2":
+						score_pion = score_pion * 2;
+						break;
+				}
+				this.bonus[ligne - 1 + i, colonne - 1] = "  ";
+			}
+			score += score_pion;
+		}
+        if (multiple_mot != 0)
+        {
+			score = score * multiple_mot;
+        }
+		return score;
     }
 }

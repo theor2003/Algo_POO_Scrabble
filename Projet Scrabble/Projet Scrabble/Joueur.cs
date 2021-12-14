@@ -18,27 +18,28 @@ public class Joueur
     }
 	public Joueur(string path) //constructeur avec fichier .txt //A MODIFIER POUR ACCOMODER LA FORME DE Joueurs.txt
     {
-		string[] info = File.ReadAllLines(path);
-		this.nom = info[0];
-        if (info.Length >= 1)
+        string[] score_lettre = File.ReadAllLines("Jetons.txt");
+        string[] info = File.ReadAllLines(path);
+        string[] ligne1 = info[0].Split(";");
+        this.nom = ligne1[0];
+        this.score = Convert.ToInt32(ligne1[1]);
+        string[] ligne2 = info[1].Split(";");
+        this.mots_trouves = ligne2;
+        string[] ligne3 = info[2].Split(";");
+        List<Jeton> jeton = new List<Jeton>();
+        for (int i = 0; i < 7; i++)
         {
-			this.score = Convert.ToInt32(info[1]);
-            string[] list = new string[info.Length - 2];
-            if (info.Length >= 2)
+            for(int j = 0; j < 27; j++)
             {
-				for(int i = 2; i < info.Length; i++)
+                string[] ligne_lettre = score_lettre[j].Split(";");
+                if (ligne3[i] == ligne_lettre[0])
                 {
-					list[i - 2] = info[i];
+                    jeton.Add(new Jeton(ligne3[i], Convert.ToInt32(ligne_lettre[1]),1));
                 }
-			}
-            this.mots_trouves = list;
-		}
-        else
-        {
-			this.score = 0;
-			this.mots_trouves = null;
+            }
         }
-	}
+        this.jeton = jeton;
+    }
 	
     public string Nom
     {
@@ -79,19 +80,25 @@ public class Joueur
 
     public override string ToString() //retourne une chaîne de caractères qui décrit un joueur.
     {
+        string text = null;
         if (this.mots_trouves != null) // si le joueur a trouvé au moins un mot
         {
-            string text = "Le joueur " + this.nom + " a un score de " + this.score + " points. Il a trouvé les mots suivants :\n";
+            text = "Le joueur " + this.nom + " a un score de " + this.score + " points. Il a trouvé les mots suivants :\n";
             for (int i = 0; i < jeton.Count; i++)
             {
                 text += this.jeton[i].Lettre + ", ";
             }
-            return text;
         }
         else // si il n'y a aucun mots de trouvés
         {
-            return "Le joueur " + this.nom + " n'a pas de points, car il n'a trouvé aucun mot.\n";
+            text = "Le joueur " + this.nom + " n'a pas de points, car il n'a trouvé aucun mot.\n";
         }
+        text += "\nLe joueur possède les pions suivants";
+        for (int i = 0; i < this.jeton.Count; i ++)
+        {
+            text += "\n" + this.jeton[i].Lettre + " en " + this.jeton[i].Quantite + " fois (cette lettre vaut " + this.jeton[i].Score + ")";
+        }
+        return text;
     }
 
     public void Add_Score(int val) // qui ajoute une valeur au score
@@ -99,7 +106,7 @@ public class Joueur
         this.Score = this.Score + val;
     }
 
-    public int Is_This_Letter_In_Hand(string lettre) //vérifie si le joueur a trouvé ce mot
+    public int Is_This_Letter_In_Hand(string lettre) //vérifie si le joueur possède la lettre et retourne son index
     {
         int index = -1;
         for(int i = 0; i < this.jeton.Count; i++)
@@ -121,7 +128,7 @@ public class Joueur
     {
         if (this.Is_This_Letter_In_Hand(monjeton.Lettre) != -1) //verifie que le jeton est bien dans la main courante
         {
-            this.jeton.Remove(monjeton); 
+            this.jeton.RemoveAt(this.Is_This_Letter_In_Hand(monjeton.Lettre)); 
         }
     }
 }
