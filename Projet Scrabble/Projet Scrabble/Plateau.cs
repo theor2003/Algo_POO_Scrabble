@@ -16,6 +16,7 @@ public class Plateau
 			string[] bonus_line = bonus_tab[i].Split(";");
 			for (int j = 0; j < 15; j++)
 			{
+				this.lettres_tab[i, j] = "_";
 				this.bonus[i, j] = bonus_line[j];
 			}
 		}
@@ -57,6 +58,7 @@ public class Plateau
 	public void toString()
     {
 		Console.WriteLine("    A  B  C  D  E  F  G  H  I  J  K  L  M  O  P");
+		Console.WriteLine("    1  2  3  4  5  6  7  8  9  10 11 12 13 14 15");
 		for (int i = 1; i < 16; i++)
 		{
             if (i < 10)
@@ -115,10 +117,7 @@ public class Plateau
 			joueur.Add_Score(Calcul_Score(mot, ligne, colonne, direction));
 			joueur.Add_Mot(mot);
 			this.Placer_Lettres(mot, joueur, ligne, colonne, direction);
-			for(int i = 0; i <= 7-joueur.Jeton.Count; i++)
-            {
-				joueur.Add_Main_Courante(sac.Retire_Jeton(r));
-            }
+			joueur.Piocher_Necessaire(sac, r);
         }
 		return possible;
     }
@@ -176,7 +175,11 @@ public class Plateau
 			{
 				if (this.lettres_tab[ligne - 1, colonne - 1 + i] == "_" && (joueur.Is_This_Letter_In_Hand(LettreEnCours) != -1 || joueur.Is_This_Letter_In_Hand("*") != -1))
 				{
-					joueur.Remove_Main_Courante(LettreEnCours);
+                    if (joueur.Remove_Main_Courante(LettreEnCours)==false)
+                    {
+						joueur.Remove_Main_Courante("*");
+
+					}
 					this.lettres_tab[ligne - 1, colonne - 1 + i] = LettreEnCours;
 				}
 			}
@@ -184,7 +187,11 @@ public class Plateau
 			{
 				if (this.lettres_tab[ligne - 1 + i, colonne - 1] == "_" && (joueur.Is_This_Letter_In_Hand(LettreEnCours) != -1 || joueur.Is_This_Letter_In_Hand("*") != -1))
 				{
-					joueur.Remove_Main_Courante(LettreEnCours);
+					if (joueur.Remove_Main_Courante(LettreEnCours) == false)
+					{
+						joueur.Remove_Main_Courante("*");
+
+					}
 					this.lettres_tab[ligne - 1 + i, colonne - 1] = LettreEnCours;
 				}
 			}

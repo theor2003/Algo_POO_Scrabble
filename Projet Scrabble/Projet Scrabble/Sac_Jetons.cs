@@ -22,6 +22,18 @@ public class Sac_Jeton
 		}
 	}
 
+	public int Nb_Jetons
+    {
+        get
+        {
+			int compteur = 0;
+			for (int i = 0; i < 27; i++)
+			{
+				compteur += this.jeton[i].Quantite;
+			}
+			return compteur;
+		}
+    }
 
 	public Jeton Retire_Jeton(Random r) // tire au hasard un jeton parmi les possibles et le retire du sac
 	{

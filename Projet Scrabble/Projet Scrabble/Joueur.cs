@@ -14,7 +14,7 @@ public class Joueur
 		this.nom = nom;
 		this.score = score;
 		this.mots_trouves = mots_trouves;
-        this.jeton = jeton;
+        this.jeton = new List<Jeton>();
     }
 	public Joueur(string path) //constructeur avec fichier .txt //A MODIFIER POUR ACCOMODER LA FORME DE Joueurs.txt
     {
@@ -87,25 +87,22 @@ public class Joueur
         string text = null;
         if (this.mots_trouves != null) // si le joueur a trouvé au moins un mot
         {
-            text = "Le joueur " + this.nom + " a un score de " + this.score + " points. Il possède les pions suivants :\n";
-            for (int i = 0; i < jeton.Count; i++)
-            {
-                text += this.jeton[i].Lettre + ", ";
-            }
-            text += "\nIl as trouvé les mots suivants :";
+            text = "Le joueur " + this.nom + " a un score de " + this.score + " points.";
+            text += "\nIl as trouvé les mots suivants :\n";
             for (int j = 0; j < this.mots_trouves.Length; j++)
             {
-                text += "\n" + this.mots_trouves[j];
+                text +=this.mots_trouves[j] + " ";
             }
         }
         else // si il n'y a aucun mots de trouvés
         {
             text = "Le joueur " + this.nom + " n'a pas de points, car il n'a trouvé aucun mot.\n";
         }
-        text += "\nLe joueur possède les pions suivants";
-        for (int i = 0; i < this.jeton.Count; i ++)
+        text += "\nLe joueur possède les pions suivants :\n";
+        for (int i = 0; i < this.jeton.Count; i++)
         {
-            text += "\n" + this.jeton[i].Lettre + " en " + this.jeton[i].Quantite + " fois (cette lettre vaut " + this.jeton[i].Score + ")";
+            text +=this.jeton[i].Lettre + " ";
+            //text += "\n" + this.jeton[i].Lettre + " en " + this.jeton[i].Quantite + " fois (cette lettre vaut " + this.jeton[i].Score + ")";
         }
         return text;
     }
@@ -133,11 +130,22 @@ public class Joueur
         this.jeton.Add(monjeton);
     }
 
-    public void Remove_Main_Courante(string lettre) //retire un jeton de la main courante 
+    public bool Remove_Main_Courante(string lettre) //retire un jeton de la main courante 
     {
         if (this.Is_This_Letter_In_Hand(lettre) != -1) //verifie que le jeton est bien dans la main courante
         {
             this.jeton.RemoveAt(this.Is_This_Letter_In_Hand(lettre)); 
+        }
+        return this.Is_This_Letter_In_Hand(lettre) != -1;
+    }
+    public void Piocher_Necessaire(Sac_Jeton sac,Random r)
+    {
+        for (int i = 0; i < 7; i++)
+        {
+            for (int j = 0; j < 7 - this.Jeton.Count; j++)
+            {
+                this.Add_Main_Courante(sac.Retire_Jeton(r));
+            }
         }
     }
 }
