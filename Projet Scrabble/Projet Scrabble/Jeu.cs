@@ -88,7 +88,7 @@ public class Jeu
     {
 		int nb_joueurs = this.joueurs.Count; 
 		int joueur_en_cour = 0;
-		while(this.Tour(this.joueurs[joueur_en_cour], r) && nb_tour<10) //fin de la partie après 10 tours
+		while(this.Tour(this.joueurs[joueur_en_cour], r) && nb_tour<2) //fin de la partie après 10 tours
         {
 			joueur_en_cour++;
 			if (joueur_en_cour == nb_joueurs)

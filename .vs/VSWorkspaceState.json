@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Projet Scrabble",
-    "\\Projet Scrabble\\Projet Scrabble"
+    "\\Projet Scrabble\\Projet Scrabble",
+    "\\Projet Scrabble\\UnitTestProject1"
   ],
-  "SelectedNode": "\\Projet Scrabble\\Projet Scrabble\\Program.cs",
+  "SelectedNode": "\\Projet Scrabble\\UnitTestProject1\\Sac_Jetons.cs",
   "PreviewInSolutionExplorer": false
 }

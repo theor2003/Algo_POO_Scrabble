@@ -36,8 +36,6 @@ C:\Users\Théo\Source\Repos\theor2003\Algo_POO_Scrabble\Projet Scrabble\Projet S
 C:\Users\Théo\Source\Repos\theor2003\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\bin\Debug\netcoreapp3.1\ProjetScrabble.runtimeconfig.dev.json
 C:\Users\Théo\Source\Repos\theor2003\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\bin\Debug\netcoreapp3.1\ProjetScrabble.dll
 C:\Users\Théo\Source\Repos\theor2003\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\bin\Debug\netcoreapp3.1\ProjetScrabble.pdb
-C:\Users\Théo\Source\Repos\theor2003\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\bin\Debug\netcoreapp3.1\Projet Scrabble.pdb
-C:\Users\Théo\Source\Repos\theor2003\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\ProjetScrabble.csproj.AssemblyReference.cache
 C:\Users\Théo\Source\Repos\theor2003\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\ProjetScrabble.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Théo\Source\Repos\theor2003\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\ProjetScrabble.AssemblyInfoInputs.cache
 C:\Users\Théo\Source\Repos\theor2003\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\ProjetScrabble.AssemblyInfo.cs
@@ -46,3 +44,4 @@ C:\Users\Théo\Source\Repos\theor2003\Algo_POO_Scrabble\Projet Scrabble\Projet S
 C:\Users\Théo\Source\Repos\theor2003\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\ProjetScrabble.dll
 C:\Users\Théo\Source\Repos\theor2003\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\ProjetScrabble.pdb
 C:\Users\Théo\Source\Repos\theor2003\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\ProjetScrabble.genruntimeconfig.cache
+C:\Users\Théo\Source\Repos\theor2003\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\obj\Debug\netcoreapp3.1\ProjetScrabble.csproj.AssemblyReference.cache

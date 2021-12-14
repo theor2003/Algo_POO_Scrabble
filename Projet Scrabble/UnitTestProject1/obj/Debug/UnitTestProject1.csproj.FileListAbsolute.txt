@@ -2,3 +2,5 @@ C:\Users\maell\OneDrive\Bureau\ALGO\PROJET\Projet Scrabble\Projet Scrabble\UnitT
 C:\Users\maell\OneDrive\Bureau\ALGO\PROJET\Projet Scrabble\Projet Scrabble\UnitTestProject1\obj\Debug\UnitTestProject1.csproj.CoreCompileInputs.cache
 C:\Users\maell\source\repos\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\UnitTestProject1\obj\Debug\UnitTestProject1.csproj.AssemblyReference.cache
 C:\Users\maell\source\repos\Algo_POO_Scrabble\Projet Scrabble\Projet Scrabble\Projet Scrabble\UnitTestProject1\obj\Debug\UnitTestProject1.csproj.CoreCompileInputs.cache
+C:\Users\Théo\Source\Repos\theor2003\Algo_POO_Scrabble\Projet Scrabble\UnitTestProject1\obj\Debug\UnitTestProject1.csproj.AssemblyReference.cache
+C:\Users\Théo\Source\Repos\theor2003\Algo_POO_Scrabble\Projet Scrabble\UnitTestProject1\obj\Debug\UnitTestProject1.csproj.CoreCompileInputs.cache
