@@ -180,8 +180,8 @@ public class Plateau
 						joueur.Remove_Main_Courante("*"); //si l'on as pas la lettre on enleve un joker
 
 					}
-					this.lettres_tab[ligne - 1, colonne - 1 + i] = LettreEnCours;
 				}
+				this.lettres_tab[ligne - 1, colonne - 1 + i] = LettreEnCours;
 			}
 			else if (direction == 'v')
 			{
@@ -192,8 +192,8 @@ public class Plateau
 						joueur.Remove_Main_Courante("*"); //si l'on as pas la lettre on enleve un joker
 
 					}
-					this.lettres_tab[ligne - 1 + i, colonne - 1] = LettreEnCours; //place la lettre sur le plateau
 				}
+				this.lettres_tab[ligne - 1 + i, colonne - 1] = LettreEnCours; //place la lettre sur le plateau
 			}
 		}
 	}

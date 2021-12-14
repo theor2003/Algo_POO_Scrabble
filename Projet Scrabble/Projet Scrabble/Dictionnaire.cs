@@ -57,9 +57,4 @@ public class Dictionnaire
         }
 		return found;
     }
-
-    internal bool RechDichoRecursif(int v, object length, string mot)
-    {
-        throw new NotImplementedException();
-    }
 }

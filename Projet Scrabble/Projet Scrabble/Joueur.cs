@@ -69,6 +69,7 @@ public class Joueur
     public List<Jeton> Jeton
     {
         get { return this.jeton; }
+        set { this.jeton = value; }
     }
 
     public void Add_Mot(string mot) //ajoute le mot dans la liste des mots déjà trouvés par le joueur au cours de la partie

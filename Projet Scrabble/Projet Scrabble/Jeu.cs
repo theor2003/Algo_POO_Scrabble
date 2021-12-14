@@ -40,6 +40,7 @@ public class Jeu
 			Console.WriteLine(interval.TotalSeconds); //affiche le décalage de temps en seconde
 		}
 		*/
+		int fail = 0;
 		string answer = null;
 		int ligne;
 		int colonne;
@@ -53,14 +54,37 @@ public class Jeu
 				Console.Clear(); //efface la console
 				this.monplateau.toString(); //affiche le plateau
 				Console.WriteLine(joueur.ToString()); //affiche les infos du joueurs dont sa main
+
+				if (answer == "-PASSE-")
+				{
+					joueur.Jeton = new List<Jeton>();
+					joueur.Piocher_Necessaire(this.monsac_jeton, r);
+					break;
+				}
 				Console.WriteLine("Quel mot voulez vous placer ?");
-				answer = Console.ReadLine();
-				Console.WriteLine("Quelle ligne ?");
-				ligne = Convert.ToInt32(Console.ReadLine());
+				answer = Console.ReadLine().ToUpper();
+				if (answer == "-PASSE-")
+				{
+					joueur.Jeton = new List<Jeton>();
+					joueur.Piocher_Necessaire(this.monsac_jeton, r);
+					break;
+				}
+				Console.WriteLine("Quelle ligne ?"); 
+				try{ ligne = Convert.ToInt32(Console.ReadLine()); }
+                catch
+                {
+					ligne = 15;
+                }
 				Console.WriteLine("Quelle colonne ?");
-				colonne = Convert.ToInt32(Console.ReadLine());
+				try { colonne = Convert.ToInt32(Console.ReadLine()); }
+				catch
+				{
+					colonne = 15;
+				}
 				Console.WriteLine("Quelle direction (h ou v) ?");
-				direction = Convert.ToChar(Console.ReadLine());
+				try { direction = Convert.ToChar(Console.ReadLine()); }
+				catch { direction = 'h'; }
+				fail++;
 				//Console.WriteLine(this.monplateau.Test_Plateau(answer, ligne, colonne, direction, this.mondico, joueur, this.monsac_jeton, r));
 				//Console.WriteLine(this.monplateau.Placement_Horizontal(answer, ligne, colonne));
 				//Console.WriteLine(this.monplateau.Appartenance_Dico(answer, this.mondico));
@@ -75,11 +99,26 @@ public class Jeu
 				Console.Clear();
 				this.monplateau.toString();
 				Console.WriteLine(joueur.ToString());
+
+                if (fail != 0)
+                {
+					Console.BackgroundColor = ConsoleColor.Red;
+					Console.WriteLine("\nERREUR, tapez un mot valide ou tapez -passe- pour passer votre tour\n");
+					Console.ResetColor();
+                }
 				Console.WriteLine("Quel mot voulez vous placer ?");
-				answer = Console.ReadLine();
+				answer = Console.ReadLine().ToUpper();
+				if(answer == "-PASSE-") 
+				{
+					joueur.Jeton = new List<Jeton>();
+					joueur.Piocher_Necessaire(this.monsac_jeton,r);
+					break; 
+				}
 				Console.WriteLine("Quelle direction (h ou v) ?");
-				direction = Convert.ToChar(Console.ReadLine());
-			} while (this.monplateau.Test_Plateau(answer, 8, 8, direction, this.mondico, joueur, this.monsac_jeton, r) == false);
+				try { direction = Convert.ToChar(Console.ReadLine()); }
+				catch { direction = 'h'; }
+				fail++;
+			} while (answer == "" || this.monplateau.Test_Plateau(answer, 8, 8, direction, this.mondico, joueur, this.monsac_jeton, r) == false);
 		}
 		nb_tour++; //incrémente de 1 le nombre de tour
 		return possible;
@@ -88,7 +127,7 @@ public class Jeu
     {
 		int nb_joueurs = this.joueurs.Count; 
 		int joueur_en_cour = 0;
-		while(this.Tour(this.joueurs[joueur_en_cour], r) && nb_tour<2) //fin de la partie après 10 tours
+		while(this.Tour(this.joueurs[joueur_en_cour], r) && nb_tour<4) //fin de la partie après x tours
         {
 			joueur_en_cour++;
 			if (joueur_en_cour == nb_joueurs)
