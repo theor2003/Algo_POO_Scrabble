@@ -68,14 +68,17 @@ namespace Projet_Scrabble
             game1.toString();
             Joueur Théo2 = new Joueur("Joueurs.txt");
             Dictionnaire Robert = new Dictionnaire("Francais.txt", "Français");
+            Console.WriteLine(Théo2.ToString());
+            //Console.WriteLine(Théo2.Is_This_Letter_In_Hand("*"));
             Console.WriteLine(Théo2.Score);
-            //Console.WriteLine(Théo2.ToString());
             //Console.WriteLine("J'EN PEUX PLUS AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
             //Console.WriteLine(game1.Placement_Horizontal("AH", 15, 1));
             //Console.WriteLine(game1.Appartenance_Dico("AH",Robert));
             //Console.WriteLine(game1.Appartenance_Main_Et_Mots_Croise("AH",Théo2, 15, 1,'h'));
             Console.WriteLine(game1.Test_Plateau("AH",15,1,'h',Robert,Théo2));
             Console.WriteLine(Théo2.Score);
+            Console.WriteLine(Théo2.ToString());
+            game1.toString();
             //Console.WriteLine();
             //Console.WriteLine(game1.Calcul_Score("AHLO",15,1,'h'));
         }

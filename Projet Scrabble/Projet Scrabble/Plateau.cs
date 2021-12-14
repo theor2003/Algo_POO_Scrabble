@@ -114,6 +114,7 @@ public class Plateau
         {
 			joueur.Add_Score(Calcul_Score(mot, ligne, colonne, direction));
 			joueur.Add_Mot(mot);
+			this.Placer_Lettres(mot, joueur, ligne, colonne, direction);
         }
 		return possible;
     }
@@ -142,7 +143,7 @@ public class Plateau
 				{
 					done = false;
 				}
-				if (this.lettres_tab[ligne - 1, colonne - 1 + i] == "_" && (joueur.Is_This_Letter_In_Hand(LettreEnCours) == -1 || joueur.Is_This_Letter_In_Hand("*") == -1))
+				if (this.lettres_tab[ligne - 1, colonne - 1 + i] == "_" && (joueur.Is_This_Letter_In_Hand(LettreEnCours) == -1 && joueur.Is_This_Letter_In_Hand("*") == -1))
 				{
 					done = false;
 				}
@@ -153,7 +154,7 @@ public class Plateau
 				{
 					done = false;
 				}
-				if (this.lettres_tab[ligne - 1 + i, colonne - 1] == "_" && (joueur.Is_This_Letter_In_Hand(LettreEnCours) == -1 || joueur.Is_This_Letter_In_Hand("*") == -1))
+				if (this.lettres_tab[ligne - 1 + i, colonne - 1] == "_" && (joueur.Is_This_Letter_In_Hand(LettreEnCours) == -1 && joueur.Is_This_Letter_In_Hand("*") == -1))
 				{
 					done = false;
 				}
@@ -161,6 +162,30 @@ public class Plateau
         }
 		return done;
     }
+	public void Placer_Lettres(string mot, Joueur joueur, int ligne, int colonne, char direction)
+    {
+		string LettreEnCours = null;
+		for (int i = 0; i < mot.Length; i++)
+		{
+			LettreEnCours = Convert.ToString(mot[i]);
+			if (direction == 'h')
+			{
+				if (this.lettres_tab[ligne - 1, colonne - 1 + i] == "_" && (joueur.Is_This_Letter_In_Hand(LettreEnCours) != -1 || joueur.Is_This_Letter_In_Hand("*") != -1))
+				{
+					joueur.Remove_Main_Courante(LettreEnCours);
+					this.lettres_tab[ligne - 1, colonne - 1 + i] = LettreEnCours;
+				}
+			}
+			else if (direction == 'v')
+			{
+				if (this.lettres_tab[ligne - 1 + i, colonne - 1] == "_" && (joueur.Is_This_Letter_In_Hand(LettreEnCours) != -1 || joueur.Is_This_Letter_In_Hand("*") != -1))
+				{
+					joueur.Remove_Main_Courante(LettreEnCours);
+					this.lettres_tab[ligne - 1 + i, colonne - 1] = LettreEnCours;
+				}
+			}
+		}
+	}
 	public int Calcul_Score(string mot,int ligne,int colonne,char direction)
     {
 		int score = 0;

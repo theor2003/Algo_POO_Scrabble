@@ -124,11 +124,11 @@ public class Joueur
         this.jeton.Add(monjeton);
     }
 
-    public void Remove_Main_Courante(Jeton monjeton) //retire un jeton de la main courante 
+    public void Remove_Main_Courante(string lettre) //retire un jeton de la main courante 
     {
-        if (this.Is_This_Letter_In_Hand(monjeton.Lettre) != -1) //verifie que le jeton est bien dans la main courante
+        if (this.Is_This_Letter_In_Hand(lettre) != -1) //verifie que le jeton est bien dans la main courante
         {
-            this.jeton.RemoveAt(this.Is_This_Letter_In_Hand(monjeton.Lettre)); 
+            this.jeton.RemoveAt(this.Is_This_Letter_In_Hand(lettre)); 
         }
     }
 }
