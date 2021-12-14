@@ -10,14 +10,14 @@ public class Plateau
 	{
 		this.lettres_tab = new string[15, 15];
 		this.bonus = new string[15, 15];
-		string[] bonus_tab = File.ReadAllLines("Bonus.txt");
+		string[] bonus_tab = File.ReadAllLines("Bonus.txt"); //fichier .txt avec les cases multiplicatrices
 		for (int i = 0; i < 15; i++)
 		{
-			string[] bonus_line = bonus_tab[i].Split(";");
+			string[] bonus_line = bonus_tab[i].Split(";"); //séparation des mots entre les ;
 			for (int j = 0; j < 15; j++)
 			{
-				this.lettres_tab[i, j] = "_";
-				this.bonus[i, j] = bonus_line[j];
+				this.lettres_tab[i, j] = "_"; //initialisation d'un plateau vide
+				this.bonus[i, j] = bonus_line[j]; //initialisation des cases bonus
 			}
 		}
 	}
@@ -34,14 +34,13 @@ public class Plateau
 			for (int j = 0; j < 15; j++)
 			{
 				this.lettres_tab[i, j] = lettre_line[j];
-				if(lettres_tab[i, j] == "_")
+				if(lettres_tab[i, j] == "_") //si il n'y as pas de lettre alors le bonus est toujours présent
                 {
 					this.bonus[i, j] = bonus_line[j];
 				}
-                else
+                else //le cas échéant met une case vide
                 {
-					//this.bonus[i, j] = "  "; //A REMPLACER TEST COULEUR
-					this.bonus[i, j] = bonus_line[j];
+					this.bonus[i, j] = "  ";
 				}
 			}
 		}
@@ -105,20 +104,20 @@ public class Plateau
 	public bool Test_Plateau(string mot, int ligne, int colonne, char direction,Dictionnaire dico,Joueur joueur,Sac_Jeton sac,Random r)
     {
 		bool possible = true;
-		if(direction == 'h')
+		if(direction == 'h') //si placement horizontal
         {
 			possible = this.Placement_Horizontal(mot, ligne, colonne) && this.Appartenance_Dico(mot, dico) && Appartenance_Main_Et_Mots_Croise(mot, joueur, ligne, colonne, direction);
         }
-		else if (direction == 'v')
+		else if (direction == 'v') //si placement vertical
         {
 			possible = this.Placement_Vertical(mot, ligne, colonne) && this.Appartenance_Dico(mot, dico) && Appartenance_Main_Et_Mots_Croise(mot, joueur, ligne, colonne, direction);
 		}
-        if (possible)
+        if (possible) //si le placement as pu aboutir
         {
-			joueur.Add_Score(Calcul_Score(mot, ligne, colonne, direction));
-			joueur.Add_Mot(mot);
-			this.Placer_Lettres(mot, joueur, ligne, colonne, direction);
-			joueur.Piocher_Necessaire(sac, r);
+			joueur.Add_Score(Calcul_Score(mot, ligne, colonne, direction)); //ajout du score
+			joueur.Add_Mot(mot); //ajout du mot dans la liste des mots trouvés du joueur
+			this.Placer_Lettres(mot, joueur, ligne, colonne, direction); //place les lettres de la main du joueur sur le plateau
+			joueur.Piocher_Necessaire(sac, r); //pioche le nombre de pions manquant
         }
 		return possible;
 	}
@@ -145,22 +144,22 @@ public class Plateau
             {
 				if (this.lettres_tab[ligne - 1, colonne - 1 + i] != "_" && this.lettres_tab[ligne - 1, colonne - 1 + i] != LettreEnCours)
 				{
-					done = false;
+					done = false; //on vérifie que si la case est pleine, elle correspond a la bonne lettre de notre mot
 				}
 				if (this.lettres_tab[ligne - 1, colonne - 1 + i] == "_" && (joueur.Is_This_Letter_In_Hand(LettreEnCours) == -1 && joueur.Is_This_Letter_In_Hand("*") == -1))
 				{
-					done = false;
+					done = false; //on vérifie que si la case est vide on possède le pion dans la main
 				}
 			}
 			else if (direction == 'v')
 			{
 				if (this.lettres_tab[ligne - 1 + i, colonne - 1] != "_" && this.lettres_tab[ligne - 1, colonne - 1 + i] != LettreEnCours)
 				{
-					done = false;
+					done = false; //on vérifie que si la case est pleine, elle correspond a la bonne lettre de notre mot
 				}
 				if (this.lettres_tab[ligne - 1 + i, colonne - 1] == "_" && (joueur.Is_This_Letter_In_Hand(LettreEnCours) == -1 && joueur.Is_This_Letter_In_Hand("*") == -1))
 				{
-					done = false;
+					done = false; //on vérifie que si la case est vide on possède le pion dans la main
 				}
 			}
         }
@@ -178,7 +177,7 @@ public class Plateau
 				{
                     if (joueur.Remove_Main_Courante(LettreEnCours)==false)
                     {
-						joueur.Remove_Main_Courante("*");
+						joueur.Remove_Main_Courante("*"); //si l'on as pas la lettre on enleve un joker
 
 					}
 					this.lettres_tab[ligne - 1, colonne - 1 + i] = LettreEnCours;
@@ -190,10 +189,10 @@ public class Plateau
 				{
 					if (joueur.Remove_Main_Courante(LettreEnCours) == false)
 					{
-						joueur.Remove_Main_Courante("*");
+						joueur.Remove_Main_Courante("*"); //si l'on as pas la lettre on enleve un joker
 
 					}
-					this.lettres_tab[ligne - 1 + i, colonne - 1] = LettreEnCours;
+					this.lettres_tab[ligne - 1 + i, colonne - 1] = LettreEnCours; //place la lettre sur le plateau
 				}
 			}
 		}
@@ -211,12 +210,12 @@ public class Plateau
 				string[] ligne_lettre = score_lettre[j].Split(";");
 				if (Convert.ToString(mot[i]) == ligne_lettre[0])
 				{
-					score_pion = Convert.ToInt32(ligne_lettre[1]);
+					score_pion = Convert.ToInt32(ligne_lettre[1]); //récupère le score de la lettre
 				}
 			}
 			if (direction == 'h')
 			{
-                switch (this.bonus[ligne - 1, colonne - 1 + i])
+                switch (this.bonus[ligne - 1, colonne - 1 + i]) //regarde si il y as un ou des bonus
                 {
 					case "M3":
 						multiple_mot += 3;
@@ -235,7 +234,7 @@ public class Plateau
 			}
 			else if (direction == 'v')
 			{
-				switch (this.bonus[ligne - 1 + i, colonne - 1])
+				switch (this.bonus[ligne - 1 + i, colonne - 1]) //regarde si il y as un ou des bonus
 				{
 					case "M3":
 						multiple_mot += 3;
@@ -252,11 +251,11 @@ public class Plateau
 				}
 				this.bonus[ligne - 1 + i, colonne - 1] = "  ";
 			}
-			score += score_pion;
+			score += score_pion; //ajoute le score de la lettre au score du mot
 		}
         if (multiple_mot != 0)
         {
-			score = score * multiple_mot;
+			score = score * multiple_mot; //multiplie le mot si besoin
         }
 		return score;
     }
